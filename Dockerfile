@@ -13,10 +13,8 @@ RUN pacman -Syyu --noconfirm --needed \
  && useradd -g proxy proxy
 
 COPY squid.conf /etc/squid/
-COPY mime_add.conf /root/
 COPY entrypoint.sh /sbin/entrypoint.sh
-RUN chmod 755 /sbin/entrypoint.sh \
- && cat /root/mime_add.conf >> /etc/squid/mime.conf
+RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 3128/tcp
 ENTRYPOINT ["/sbin/entrypoint.sh"]
