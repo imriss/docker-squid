@@ -7,7 +7,7 @@ ENV SQUID_VERSION=4.2 \
     SQUID_USER=proxy
 
 RUN pacman -Syyu --noconfirm --needed \
- && pacman -S --noconfirm --needed squid \
+ && pacman -S --noconfirm --needed squid iproute2 \
  && rm -rf /var/cache/pacman/pkg/* \
  && groupadd proxy \
  && useradd -g proxy proxy
