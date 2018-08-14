@@ -1,7 +1,9 @@
+# 180807 Reza Farrahi (imriss@yahoo.com)
 Squid:
-  image: sameersbn/squid:3.5.27
+  image: imriss/docker-squid
   ports:
     - "3128:3128"
   volumes:
-    - /srv/docker/squid/cache:/var/spool/squid
+    - /srv/docker/squid/cache:/var/cache/squid
+    - /srv/docker/squid/logs:/var/log/squid
   restart: always
